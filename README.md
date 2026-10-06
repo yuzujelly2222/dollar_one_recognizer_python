@@ -4,7 +4,7 @@
 
 A Python 3 implementation of the **$1 Unistroke Recognizer**.
 
-[![PyPI](https://img.shields.io/pypi/v/dollar-one-recognizer-py.svg)](https://pypi.org/project/dollar-one-recognizer-py/)
+[![PyPI](https://img.shields.io/pypi/v/dollar-one-recognizer-py)](https://pypi.org/project/dollar-one-recognizer-py/)
 [![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
