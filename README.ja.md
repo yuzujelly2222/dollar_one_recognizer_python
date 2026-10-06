@@ -1,11 +1,11 @@
 [English](README.md) | [日本語](README.ja.md)
 
-# dolla_one_recognizer_python
+# dollar_one_recognizer_python
 
 $1 Unistroke Recognizer の Python 3 実装
 
 
-[![PyPI](https://img.shields.io/pypi/v/dolla-one-recognizer-py.svg)](https://pypi.org/project/dolla-one-recognizer-py/)
+[![PyPI](https://img.shields.io/pypi/v/dollar-one-recognizer-py.svg)](https://pypi.org/project/dollar-one-recognizer-py/)
 [![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
@@ -23,7 +23,7 @@ $1 Unistroke Recognizer の Python 3 実装
 やカラー物体・指先トラッキングなど）で得た座標列をそのままフレームごとに追加していけば、
 体の動きや物体の軌跡を一筆書きジェスチャーとして認識させることもできます。
 
-本リポジトリでは、認識器本体をパッケージ化した `dolla_one_recognizer_py/` に加えて、ジェスチャーを
+本リポジトリでは、認識器本体をパッケージ化した `dollar_one_recognizer_py/` に加えて、ジェスチャーを
 マウスで描いてテンプレートとして保存する `export_gesture_app.py` と、保存したテンプレートと照合して
 認識を試せる `recognize_app.py` という2つの Tkinter アプリを同梱しています。
 
@@ -32,30 +32,30 @@ $1 Unistroke Recognizer の Python 3 実装
 ## インストール
 
 ```bash
-pip install dolla-one-recognizer-py
+pip install dollar-one-recognizer-py
 ```
 
-認識器本体（`dolla_one_recognizer_py`）がインストールされます。依存パッケージは `numpy`（幾何計算）のみです。
+認識器本体（`dollar_one_recognizer_py`）がインストールされます。依存パッケージは `numpy`（幾何計算）のみです。
 
 GUIアプリ（`export_gesture_app.py` / `recognize_app.py`）も使う場合は、リポジトリごとcloneしてください。
 こちらはジェスチャー画像のPNG入出力用に `pillow` も追加でインストールされます。
 
 ```bash
-git clone https://github.com/yuzujelly2222/dolla_one_recognizer_python.git
-cd dolla_one_recognizer_python
+git clone https://github.com/yuzujelly2222/dollar_one_recognizer_python.git
+cd dollar_one_recognizer_python
 pip install -r requirements.txt
 ```
 
 ## 使い方
 
 ```python
-from dolla_one_recognizer_py import dolla_one_recognizer
+from dollar_one_recognizer_py import dollar_one_recognizer
 
 # テンプレート登録（各図形につき手本の点列を1つ用意するだけでよい）
 line_template = [[x, x] for x in range(0, 101, 5)]
 check_template = [[0, 30], [30, 0], [90, 60]]
 
-recognizer = dolla_one_recognizer(
+recognizer = dollar_one_recognizer(
     size=250,
     templates=[line_template, check_template],
     templates_name=["line", "checkmark"],
@@ -122,7 +122,7 @@ $1 は入力された点列に次の4ステップを順に適用し、テンプ�
 
 ## API
 
-### `dolla_one_recognizer`
+### `dollar_one_recognizer`
 
 外部から使うのは以下の公開メンバのみです。幾何計算用のメソッド（`_get_distance` /
 `_get_centroid` / `_get_bounding_box` / `_all_point_rotate` / `_resample` / `_rotate_to_zero` /
@@ -169,7 +169,7 @@ pytest
 
 ## ライセンスと出典
 
-本リポジトリのコード（`dolla_one_recognizer_py/`を含む）は New BSD License
+本リポジトリのコード（`dollar_one_recognizer_py/`を含む）は New BSD License
 （[LICENSE](LICENSE)）で公開しています。
 
 原典・引用元:

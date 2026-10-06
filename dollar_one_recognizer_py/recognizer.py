@@ -104,7 +104,7 @@ class _deg:
     arctan2 = staticmethod(lambda y, x: np.rad2deg(np.arctan2(y, x)))
 
 
-class dolla_one_recognizer:
+class dollar_one_recognizer:
     """$1 Unistroke Recognizer - Single-stroke gesture recognition.
     
     This is a Python 3 port of the $1 Unistroke Recognizer algorithm
@@ -132,10 +132,10 @@ class dolla_one_recognizer:
         n (int): Number of resampled points
 
     Example:
-        >>> from dolla_one_recognizer_py import dolla_one_recognizer
+        >>> from dollar_one_recognizer_py import dollar_one_recognizer
         >>> # Create recognizer with one template
         >>> line = [[x, x] for x in range(0, 101, 5)]
-        >>> recognizer = dolla_one_recognizer(
+        >>> recognizer = dollar_one_recognizer(
         ...     size=250,
         ...     templates=[line],
         ...     templates_name=["line"],
@@ -166,7 +166,7 @@ class dolla_one_recognizer:
 
         Example:
             >>> line_template = [[x, x] for x in range(0, 101, 5)]
-            >>> recognizer = dolla_one_recognizer(
+            >>> recognizer = dollar_one_recognizer(
             ...     size=250,
             ...     templates=[line_template],
             ...     templates_name=["line"],
@@ -433,7 +433,7 @@ class dolla_one_recognizer:
             RuntimeError: If matching fails unexpectedly (internal error)
 
         Example:
-            >>> recognizer = dolla_one_recognizer(
+            >>> recognizer = dollar_one_recognizer(
             ...     size=250,
             ...     templates=[[[0, 0], [100, 100]]],
             ...     templates_name=["line"],

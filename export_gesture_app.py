@@ -10,7 +10,7 @@ GESTURES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gesture
 
 
 # 一筆書きジェスチャーをマウスで描いて座標列を取得するだけのお絵描きアプリ。
-# dolla_one_recognizer との連携（テンプレートとして読み込む等）は呼び出し側（recognize_app.py）で行う。
+# dollar_one_recognizer との連携（テンプレートとして読み込む等）は呼び出し側（recognize_app.py）で行う。
 class GestureDrawer:
     def __init__(self, root):
         self.root = root

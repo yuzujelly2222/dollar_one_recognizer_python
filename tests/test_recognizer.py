@@ -10,16 +10,16 @@ Tests cover:
 
 import pytest
 import numpy as np
-from dolla_one_recognizer_py import dolla_one_recognizer
+from dollar_one_recognizer_py import dollar_one_recognizer
 
 
 class TestInitialization:
-    """Test suite for dolla_one_recognizer initialization."""
+    """Test suite for dollar_one_recognizer initialization."""
 
     def test_init_with_valid_parameters(self):
         """Test initialization with valid parameters."""
         line_template = [[x, x] for x in range(0, 101, 10)]
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[line_template],
             templates_name=["line"],
@@ -36,7 +36,7 @@ class TestInitialization:
         circle = [[50 + 50*np.cos(np.radians(i)), 50 + 50*np.sin(np.radians(i))]
                   for i in range(0, 360, 30)]
 
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[line, circle],
             templates_name=["line", "circle"],
@@ -51,7 +51,7 @@ class TestInitialization:
         line_template = [[0, 0], [100, 100]]
 
         with pytest.raises(ValueError, match="size must be > 0"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=0,
                 templates=[line_template],
                 templates_name=["line"],
@@ -59,7 +59,7 @@ class TestInitialization:
             )
 
         with pytest.raises(ValueError, match="size must be > 0"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=-10,
                 templates=[line_template],
                 templates_name=["line"],
@@ -71,7 +71,7 @@ class TestInitialization:
         line_template = [[0, 0], [100, 100]]
 
         with pytest.raises(ValueError, match="n must be > 1"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=250,
                 templates=[line_template],
                 templates_name=["line"],
@@ -79,7 +79,7 @@ class TestInitialization:
             )
 
         with pytest.raises(ValueError, match="n must be > 1"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=250,
                 templates=[line_template],
                 templates_name=["line"],
@@ -92,7 +92,7 @@ class TestInitialization:
         circle = [[0, 0], [50, 50], [100, 0]]
 
         with pytest.raises(ValueError, match="templates .* and names .* must have same length"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=250,
                 templates=[line, circle],
                 templates_name=["line"],  # only one name for two templates
@@ -104,7 +104,7 @@ class TestInitialization:
         single_point = [[0, 0]]
 
         with pytest.raises(ValueError, match="must have at least 2 points"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=250,
                 templates=[single_point],
                 templates_name=["invalid"],
@@ -118,7 +118,7 @@ class TestInitialization:
         circle = [[0, 0], [50, 50], [100, 0]]
 
         with pytest.raises(ValueError, match="already registered"):
-            dolla_one_recognizer(
+            dollar_one_recognizer(
                 size=250,
                 templates=[line, circle],
                 templates_name=["shape", "shape"],  # duplicate names
@@ -132,7 +132,7 @@ class TestAddTemplate:
     def setup_method(self):
         """Set up a recognizer for each test."""
         line = [[x, x] for x in range(0, 101, 10)]
-        self.recognizer = dolla_one_recognizer(
+        self.recognizer = dollar_one_recognizer(
             size=250,
             templates=[line],
             templates_name=["line"],
@@ -203,7 +203,7 @@ class TestRecognize:
         self.circle = [[50 + 50*np.cos(np.radians(i)), 50 + 50*np.sin(np.radians(i))]
                       for i in range(0, 360, 15)]
 
-        self.recognizer = dolla_one_recognizer(
+        self.recognizer = dollar_one_recognizer(
             size=250,
             templates=[self.h_line, self.d_line, self.circle],
             templates_name=["h_line", "d_line", "circle"],
@@ -212,7 +212,7 @@ class TestRecognize:
 
     def test_recognize_no_templates_error(self):
         """Test that recognize fails with no templates."""
-        empty_recognizer = dolla_one_recognizer(
+        empty_recognizer = dollar_one_recognizer(
             size=250,
             templates=[],
             templates_name=[],
@@ -264,7 +264,7 @@ class TestEdgeCases:
 
     def test_very_small_gesture(self):
         """Test recognition of very small gesture."""
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[[[0, 0], [1, 1]]],
             templates_name=["tiny"],
@@ -277,7 +277,7 @@ class TestEdgeCases:
 
     def test_high_n_value(self):
         """Test with high resampling resolution."""
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[[[0, 0], [100, 100]]],
             templates_name=["line"],
@@ -290,7 +290,7 @@ class TestEdgeCases:
 
     def test_low_n_value(self):
         """Test with low resampling resolution."""
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[[[0, 0], [100, 100]]],
             templates_name=["line"],
@@ -308,7 +308,7 @@ class TestHelperMethods:
     def setup_method(self):
         """Set up a recognizer for testing."""
         line = [[x, x] for x in range(0, 101, 10)]
-        self.recognizer = dolla_one_recognizer(
+        self.recognizer = dollar_one_recognizer(
             size=250,
             templates=[line],
             templates_name=["line"],
@@ -360,7 +360,7 @@ class TestRecognizeMethod:
 
     def test_main_method_exists(self):
         """Test that main() method exists and works."""
-        recognizer = dolla_one_recognizer(
+        recognizer = dollar_one_recognizer(
             size=250,
             templates=[[[0, 0], [100, 100]]],
             templates_name=["line"],

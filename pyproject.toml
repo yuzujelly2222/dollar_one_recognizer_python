@@ -3,7 +3,7 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dolla_one_recognizer_py"
+name = "dollar_one_recognizer_py"
 dynamic = ["version"]
 description = "A Python 3 implementation of the $1 Unistroke Recognizer"
 readme = "README.md"
@@ -22,11 +22,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yuzujelly2222/dolla_one_recognizer_python"
+Homepage = "https://github.com/yuzujelly2222/dollar_one_recognizer_python"
 
 [tool.setuptools]
-packages = ["dolla_one_recognizer_py"]
+packages = ["dollar_one_recognizer_py"]
 include-package-data = false
 
 [tool.setuptools.dynamic]
-version = { attr = "dolla_one_recognizer_py.__version__" }
+version = { attr = "dollar_one_recognizer_py.__version__" }

@@ -5,7 +5,7 @@ from typing import Optional
 
 from PIL import Image, ImageTk
 
-from dolla_one_recognizer_py import dolla_one_recognizer
+from dollar_one_recognizer_py import dollar_one_recognizer
 CANVAS_SIZE = 600
 THUMB_SIZE = 80
 GESTURES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gestures")
@@ -101,8 +101,8 @@ class RecognizeApp:
             self.status.config(text="No templates in gestures/ (register some with export_gesture_app.py)")
             return
 
-        # 読み込んだ全テンプレートで dolla_one_recognizer を組み立て直す
-        self.recognizer = dolla_one_recognizer(size=250, templates=templates, templates_name=names, n=64)
+        # 読み込んだ全テンプレートで dollar_one_recognizer を組み立て直す
+        self.recognizer = dollar_one_recognizer(size=250, templates=templates, templates_name=names, n=64)
         self.status.config(text=f"Loaded {len(names)} template(s). Draw a gesture on the canvas")
 
         # テンプレートごとに「サムネイル画像 + 名前」の行を左のリストに追加する

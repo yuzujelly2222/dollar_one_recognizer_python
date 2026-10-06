@@ -5,14 +5,15 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-import dolla_one_recognizer_py
 import os
 import sys
-project = 'dolla_one_recognizer_py'
+sys.path.insert(0, os.path.abspath('..'))
+
+import dollar_one_recognizer_py
+project = 'dollar_one_recognizer_py'
 copyright = '2026, yuzujelly2222'
 author = 'yuzujelly2222'
-sys.path.insert(0, os.path.abspath('..'))
-release = dolla_one_recognizer_py.__version__
+release = dollar_one_recognizer_py.__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

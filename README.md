@@ -1,10 +1,10 @@
 [English](README.md) | [日本語](README.ja.md)
 
-# dolla_one_recognizer_python
+# dollar_one_recognizer_python
 
 A Python 3 implementation of the **$1 Unistroke Recognizer**.
 
-[![PyPI](https://img.shields.io/pypi/v/dolla-one-recognizer-py.svg)](https://pypi.org/project/dolla-one-recognizer-py/)
+[![PyPI](https://img.shields.io/pypi/v/dollar-one-recognizer-py.svg)](https://pypi.org/project/dollar-one-recognizer-py/)
 [![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
@@ -22,7 +22,7 @@ Input is a plain list of points `[[x, y], ...]`, so the coordinates can come fro
 mouse, touch input, or a tracker such as OpenCV optical flow / color / fingertip
 tracking — just append each frame's `(x, y)` and pass the list in.
 
-This repository contains the recognizer itself, packaged as `dolla_one_recognizer_py/`,
+This repository contains the recognizer itself, packaged as `dollar_one_recognizer_py/`,
 plus two small Tkinter demo apps: `export_gesture_app.py` (draw and save gesture
 templates) and `recognize_app.py` (match a drawn stroke against saved templates).
 
@@ -31,30 +31,30 @@ templates) and `recognize_app.py` (match a drawn stroke against saved templates)
 ## Install
 
 ```bash
-pip install dolla-one-recognizer-py
+pip install dollar-one-recognizer-py
 ```
 
-This installs the recognizer itself (`dolla_one_recognizer_py`), depending only on `numpy`.
+This installs the recognizer itself (`dollar_one_recognizer_py`), depending only on `numpy`.
 
 To also try the GUI demo apps (`export_gesture_app.py` / `recognize_app.py`), clone the
 repo instead, which additionally installs `pillow` for PNG I/O:
 
 ```bash
-git clone https://github.com/yuzujelly2222/dolla_one_recognizer_python.git
-cd dolla_one_recognizer_python
+git clone https://github.com/yuzujelly2222/dollar_one_recognizer_python.git
+cd dollar_one_recognizer_python
 pip install -r requirements.txt
 ```
 
 ## Usage
 
 ```python
-from dolla_one_recognizer_py import dolla_one_recognizer
+from dollar_one_recognizer_py import dollar_one_recognizer
 
 # Register templates — one example stroke per shape is enough
 line_template = [[x, x] for x in range(0, 101, 5)]
 check_template = [[0, 30], [30, 0], [90, 60]]
 
-recognizer = dolla_one_recognizer(
+recognizer = dollar_one_recognizer(
     size=250,
     templates=[line_template, check_template],
     templates_name=["line", "checkmark"],
